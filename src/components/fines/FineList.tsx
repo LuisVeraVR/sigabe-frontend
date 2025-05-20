@@ -161,7 +161,7 @@ export default function FineList() {
 
   return (
     <div className="bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl text-black mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header y barra de acciones */}
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden mb-6">
           <div className="px-6 py-4 border-b border-gray-100 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">

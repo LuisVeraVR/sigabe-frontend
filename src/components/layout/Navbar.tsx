@@ -69,6 +69,12 @@ export default function Navbar() {
       return "bg-white shadow-sm border-b border-gray-200";
     }
     
+    // CAMBIO: Siempre usar fondo blanco y texto oscuro cuando no está autenticado
+    if (!isAuthenticated) {
+      return 'bg-white text-gray-800 shadow-sm';
+    }
+    
+    // Solo usar transparente con texto blanco en home cuando está autenticado
     return isHome && scrollY < 10 && !isMenuOpen
       ? 'bg-transparent text-white' 
       : 'bg-white text-gray-800 shadow-sm';
@@ -271,8 +277,8 @@ export default function Navbar() {
           {/* Logo y nombre */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
-              <BookOpen className={`h-7 w-7 ${isHome && scrollY < 10 && !isMenuOpen ? 'text-blue-100' : 'text-blue-600'}`} />
-              <span className={`text-xl font-bold ${isHome && scrollY < 10 && !isMenuOpen ? 'text-white' : 'bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent'}`}>
+              <BookOpen className={`h-7 w-7 ${isAuthenticated && isHome && scrollY < 10 && !isMenuOpen ? 'text-blue-100' : 'text-blue-600'}`} />
+              <span className={`text-xl font-bold ${isAuthenticated && isHome && scrollY < 10 && !isMenuOpen ? 'text-white' : 'bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent'}`}>
                 SIGABE
               </span>
             </Link>
@@ -410,25 +416,13 @@ export default function Navbar() {
               <div className="flex items-center space-x-3">
                 <Link
                   href="/login"
-                  className={`
-                    px-3 py-2 rounded-lg text-sm font-medium transition-colors
-                    ${isHome && scrollY < 10 
-                      ? 'text-white hover:bg-white hover:bg-opacity-10' 
-                      : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
-                    }
-                  `}
+                  className="px-3 py-2 rounded-lg text-sm font-medium transition-colors text-gray-700 hover:text-blue-600 hover:bg-blue-50"
                 >
                   Iniciar sesión
                 </Link>
                 <Link
                   href="/register"
-                  className={`
-                    px-4 py-2 rounded-lg text-sm font-medium transition-colors
-                    ${isHome && scrollY < 10 
-                      ? 'bg-white text-blue-600 hover:bg-opacity-90' 
-                      : 'bg-blue-600 text-white hover:bg-blue-700'
-                    }
-                  `}
+                  className="px-4 py-2 rounded-lg text-sm font-medium transition-colors bg-blue-600 text-white hover:bg-blue-700"
                 >
                   Registrarse
                 </Link>
@@ -445,7 +439,7 @@ export default function Navbar() {
               }}
               className={`
                 p-2 rounded-md transition-colors 
-                ${isHome && scrollY < 10 && !isMenuOpen
+                ${isAuthenticated && isHome && scrollY < 10 && !isMenuOpen
                   ? 'text-white hover:bg-white hover:bg-opacity-10' 
                   : 'text-gray-600 hover:bg-blue-50 hover:text-blue-600'
                 }
