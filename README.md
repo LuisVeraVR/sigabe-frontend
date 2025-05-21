@@ -1,4 +1,4 @@
-# SIGABE - Sistema de Gestión de Biblioteca
+![image](https://github.com/user-attachments/assets/77b9bbc4-34cd-4b92-8919-54c117eb9539)# SIGABE - Sistema de Gestión de Biblioteca
 
 ![SIGABE Logo](https://img.shields.io/badge/SIGABE-Sistema%20de%20Gestión%20de%20Biblioteca-blue)
 ![Next.js](https://img.shields.io/badge/Next.js-13.5.2-black)
@@ -7,8 +7,9 @@
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.3.3-38B2AC)
 
 SIGABE es una moderna aplicación web para la gestión integral de bibliotecas, que permite administrar libros, préstamos, devoluciones y multas de manera eficiente y organizada.
+![SIGABE DEMO](![Captura de pantalla 2025-05-21 142500](https://github.com/user-attachments/assets/c0cc6082-8b82-42f8-9364-0e77f9992f88))
 
-![SIGABE Dashboard Preview](https://via.placeholder.com/800x400?text=SIGABE+Dashboard)
+![SIGABE Dashboard Preview](![image](https://github.com/user-attachments/assets/54d66e01-962e-4e92-8e89-32377933481e))
 
 ## 📋 Índice
 
