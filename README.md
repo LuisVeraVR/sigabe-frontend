@@ -7,9 +7,7 @@
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.3.3-38B2AC)
 
 SIGABE es una moderna aplicación web para la gestión integral de bibliotecas, que permite administrar libros, préstamos, devoluciones y multas de manera eficiente y organizada.
-![SIGABE DEMO](![Captura de pantalla 2025-05-21 142500](https://github.com/user-attachments/assets/c0cc6082-8b82-42f8-9364-0e77f9992f88))
-
-![SIGABE Dashboard Preview](![Captura de pantalla 2025-05-21 142553](https://github.com/user-attachments/assets/7fbad0c0-836d-47a2-a523-fe71eaf9e1af))
+# [SIGABE DEMO](https://sigabe-frontend.vercel.app/) ![Captura de pantalla 2025-05-21 142500](https://github.com/user-attachments/assets/c0cc6082-8b82-42f8-9364-0e77f9992f88)
 
 ## 📋 Índice
 
