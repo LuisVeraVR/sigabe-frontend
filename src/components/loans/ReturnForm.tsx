@@ -31,7 +31,7 @@ const returnSchema = z.object({
 type ReturnFormValues = z.infer<typeof returnSchema>;
 
 interface ReturnFormProps {
-  loanId: number;
+  loanId: string;
 }
 
 export default function ReturnForm({ loanId }: ReturnFormProps) {

@@ -1,12 +1,12 @@
 export interface Book {
-  id: number;
+  id: string;
   title: string;
   author: string;
   year: number;
   publisher: string;
   type: string;
   photo?: string;
-  avaliable: boolean;
+  available: boolean;
 }
 
 export interface BookFormData {
@@ -16,5 +16,5 @@ export interface BookFormData {
   publisher: string;
   type: string;
   photo?: string;
-  avaliable: boolean;
+  available: boolean;
 }

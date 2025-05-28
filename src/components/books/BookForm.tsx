@@ -32,7 +32,7 @@ const bookSchema = z.object({
   publisher: z.string().min(1, 'La editorial es requerida'),
   type: z.string().min(1, 'El tipo de libro es requerido'),
   photo: z.string().optional(),
-  avaliable: z.boolean().default(true),
+  available: z.boolean().default(true),
 });
 
 type BookFormValues = z.infer<typeof bookSchema>;
@@ -75,7 +75,7 @@ export default function BookForm({ book, isEditing = false }: BookFormProps) {
           publisher: book.publisher,
           type: book.type,
           photo: book.photo || '',
-          avaliable: book.avaliable,
+          available: book.available,
         }
       : {
           title: '',
@@ -84,7 +84,7 @@ export default function BookForm({ book, isEditing = false }: BookFormProps) {
           publisher: '',
           type: '',
           photo: '',
-          avaliable: true,
+          available: true,
         },
   });
 
@@ -111,6 +111,7 @@ export default function BookForm({ book, isEditing = false }: BookFormProps) {
     });
     return () => subscription.unsubscribe();
   }, [watch]);
+
 
   const onSubmit = async (data: BookFormValues) => {
     setIsSubmitting(true);
@@ -306,13 +307,13 @@ export default function BookForm({ book, isEditing = false }: BookFormProps) {
               <div className="relative inline-block w-10 mr-2 align-middle select-none">
                 <input 
                   type="checkbox" 
-                  id="avaliable" 
+                  id="available" 
                   className="sr-only peer"
-                  {...register('avaliable')}
+                  {...register('available')}
                 />
                 <div className="h-6 w-11 bg-gray-200 rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-600"></div>
               </div>
-              <label htmlFor="avaliable" className="font-medium text-gray-700 cursor-pointer">
+              <label htmlFor="available" className="font-medium text-gray-700 cursor-pointer">
                 Disponible para préstamo
               </label>
             </div>

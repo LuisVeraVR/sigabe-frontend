@@ -5,18 +5,18 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
 
 interface ApiClient extends AxiosInstance {
   getLoans: () => Promise<any>;
-  getLoansByUser: (userId: number) => Promise<any>;
+  getLoansByUser: (userId: string) => Promise<any>;
   createLoan: (loanData: CreateLoanData) => Promise<any>;
-  returnBook: (loanId: number, returnDate: string) => Promise<any>;
+  returnBook: (loanId: string, returnDate: string) => Promise<any>;
   getFines: () => Promise<any>;
-  getFinesByUser: (userId: number) => Promise<any>;
-  payFine: (fineId: number, paymentMethod: string) => Promise<any>;
+  getFinesByUser: (userId: string) => Promise<any>;
+  payFine: (fineId: string, paymentMethod: string) => Promise<any>;
   getUsers: () => Promise<any>;
 }
 
 export interface CreateLoanData {
-  userId: number;
-  bookId: number;
+  userId: string;
+  bookId: string;
   borrowDate?: string;
   dueDate: string;
   notes?: string;
@@ -45,7 +45,7 @@ api.getLoans = () => {
   return api.get('/loans');
 };
 
-api.getLoansByUser = (userId: number) => {
+api.getLoansByUser = (userId: string) => {
   return api.get(`/loans/user/${userId}`);
 };
 
@@ -53,7 +53,7 @@ api.createLoan = (loanData: CreateLoanData) => {
   return api.post('/loans', loanData);
 };
 
-api.returnBook = (loanId: number, returnDate: string) => {
+api.returnBook = (loanId: string, returnDate: string) => {
   return api.patch(`/loans/${loanId}/return`, { returnDate });
 };
 
@@ -61,11 +61,11 @@ api.getFines = () => {
   return api.get('/fines');
 };
 
-api.getFinesByUser = (userId: number) => {
+api.getFinesByUser = (userId: string) => {
   return api.get(`/fines/user/${userId}`);
 };
 
-api.payFine = (fineId: number, paymentMethod: string) => {
+api.payFine = (fineId: string, paymentMethod: string) => {
   return api.patch(`/fines/${fineId}/pay`, {
     paymentMethod,
     paidAt: new Date().toISOString()

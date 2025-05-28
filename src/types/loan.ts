@@ -9,9 +9,9 @@ export enum LoanStatus {
 }
 
 export interface Loan {
-  id: number;
-  bookId: number;
-  userId: number;
+  id: string;
+  bookId: string;
+  userId: string;
   loanDate: string; 
   dueDate: string;  
   returnDate?: string | null;

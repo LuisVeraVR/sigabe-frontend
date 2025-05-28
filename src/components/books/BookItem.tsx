@@ -21,7 +21,6 @@ interface BookItemProps {
   onEdit: () => void;
   onView?: () => void;
 }
-
 export default function BookItem({ book, onDelete, onEdit, onView }: BookItemProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isImageError, setIsImageError] = useState(false);
@@ -45,10 +44,9 @@ export default function BookItem({ book, onDelete, onEdit, onView }: BookItemPro
   
   return (
     <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden group transition-all duration-300 hover:shadow-md hover:-translate-y-1 relative">
-      {/* Badges de disponibilidad */}
       <div className="absolute top-3 left-3 z-10 flex space-x-2">
-        <div className={`flex items-center rounded-full px-2.5 py-1 text-xs font-medium ${book.avaliable ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
-          {book.avaliable ? (
+        <div className={`flex items-center rounded-full px-2.5 py-1 text-xs font-medium ${book.available ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
+          {book.available ? (
             <>
               <Clock className="h-3 w-3 mr-1" />
               Disponible

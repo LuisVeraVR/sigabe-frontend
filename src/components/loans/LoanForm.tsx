@@ -21,12 +21,13 @@ import {
 } from 'lucide-react';
 import { format, addDays } from 'date-fns';
 
+
 const loanSchema = z.object({
-  bookId: z.number({
+  bookId: z.string({
     required_error: 'Selecciona un libro',
     invalid_type_error: 'Selecciona un libro válido',
   }),
-  userId: z.number({
+  userId: z.string({
     required_error: 'Selecciona un usuario',
     invalid_type_error: 'Selecciona un usuario válido',
   }),
@@ -73,7 +74,7 @@ export default function LoanForm() {
         const response = await api.get('books/getBooks');
         const allBooks = response.data;
         setBooks(allBooks);
-        const available = allBooks.filter((book: Book) => book.avaliable);
+        const available = allBooks.filter((book: Book) => book.available);
         setAvailableBooks(available);
       } catch (error) {
         console.error('Error fetching books:', error);

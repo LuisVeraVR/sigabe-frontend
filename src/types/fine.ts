@@ -6,8 +6,8 @@ export enum FineStatus {
 }
 
 export interface Fine {
-  id: number;
-  loanId: number;
+  id: string;
+  loanId: string;
   amount: number;
   createdAt: string;
   paidAt?: string | null;
